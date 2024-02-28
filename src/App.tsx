@@ -1,5 +1,4 @@
 import React from 'react';
-import './App.css';
 import styled from "styled-components";
 import {StyledBtn, SuperButton} from "./components/Button.styled";
 import {StyledLink} from "./components/Link.styled";

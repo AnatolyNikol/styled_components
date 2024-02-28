@@ -7,7 +7,7 @@ export const Menu = styled.nav`
         display: flex;
 
         li > a {
-            color: green;
+            color: bisque;
         }
 
         li + li {
