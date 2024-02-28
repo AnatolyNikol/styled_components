@@ -24,6 +24,14 @@ const StyledBtn = styled.button`
     color: chocolate;
     font-size: 2rem;
     font-weight: bold;
+    
+    &:hover {
+        background-color: gray;
+    }
+    
+    &:last-child {
+        background-color: burlywood;
+    }
 `;
 
 const SuperButton = styled(StyledBtn)`
