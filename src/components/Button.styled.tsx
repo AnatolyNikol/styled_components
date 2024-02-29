@@ -4,8 +4,8 @@ import {MyAnimation} from "../styles/animations/Animations";
 type StyledBtnPropsType = {
     color?: string
     fontSize?: string
-    primary?: boolean
-    outlined?: boolean
+    btnType: 'primary' | 'outlined'
+    active?: boolean
 }
 
 export const StyledBtn = styled.button<StyledBtnPropsType>`
@@ -18,27 +18,31 @@ export const StyledBtn = styled.button<StyledBtnPropsType>`
     //&:last-child {
     //    background-color: burlywood;
     //}
+    
+${props => props.btnType === 'primary' && css<StyledBtnPropsType>`
+    border: 2px solid ${props => props.color || 'brown'};
+    color: ${props => props.color || 'brown'};
+    background-color: transparent;
 
-    ${props => props.outlined && css<StyledBtnPropsType>`
-        border: 2px solid ${props => props.color || 'brown'};
-        color: ${props => props.color || 'brown'};
+    &:hover {
+        border-color: gray;
+        color: gray;
         background-color: transparent;
+    }
+`};
 
-        &:hover {
-            border-color: gray;
-            color: gray;
-            background-color: transparent;
-        }
-    `};
+${props => props.btnType === 'outlined' && css<StyledBtnPropsType>`
+    background-color: ${props => props.color || 'brown'};
+    color: chocolate;
 
-    ${props => props.primary && css<StyledBtnPropsType>`
-        background-color: ${props => props.color || 'brown'};
-        color: chocolate;
+    &:hover {
+        background-color: gray;
+    }
+`}
 
-        &:hover {
-            background-color: gray;
-        }
-    `}
+${props => props.active && css<StyledBtnPropsType>`
+    box-shadow: 5px 5px 5px 5px gray;
+`};
 
 `;
 

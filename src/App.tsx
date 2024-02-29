@@ -23,8 +23,8 @@ function App() {
                 {/*<StyledBtn fontSize={'30px'}>Hello</StyledBtn>*/}
                 {/*<SuperButton>SuperButton</SuperButton>*/}
 
-                <StyledBtn primary>Hello</StyledBtn>
-                <StyledBtn outlined>Hello</StyledBtn>
+                <StyledBtn btnType={'primary'} active>Hello</StyledBtn>
+                <StyledBtn btnType={'outlined'}>Hello</StyledBtn>
             </Box>
         </div>
     );
