@@ -1,28 +1,45 @@
-import styled from "styled-components";
+import styled, {css} from "styled-components";
 import {MyAnimation} from "../styles/animations/Animations";
 
 type StyledBtnPropsType = {
     color?: string
     fontSize?: string
+    primary?: boolean
+    outlined?: boolean
 }
 
 export const StyledBtn = styled.button<StyledBtnPropsType>`
     border: none;
-    // background-color: brown;
-    background-color: ${props => props.color || 'brown'};
+    border-radius: 10px;
     padding: 10px 20px;
-    color: chocolate;
-    // font-size: 2rem;
-    font-size: ${props => props.fontSize};
+    font-size: ${props => props.fontSize || '2rem'};
     font-weight: bold;
+    
+    //&:last-child {
+    //    background-color: burlywood;
+    //}
 
-    &:hover {
-        background-color: gray;
-    }
+    ${props => props.outlined && css<StyledBtnPropsType>`
+        border: 2px solid ${props => props.color || 'brown'};
+        color: ${props => props.color || 'brown'};
+        background-color: transparent;
 
-    &:last-child {
-        background-color: burlywood;
-    }
+        &:hover {
+            border-color: gray;
+            color: gray;
+            background-color: transparent;
+        }
+    `};
+
+    ${props => props.primary && css<StyledBtnPropsType>`
+        background-color: ${props => props.color || 'brown'};
+        color: chocolate;
+
+        &:hover {
+            background-color: gray;
+        }
+    `}
+
 `;
 
 export const SuperButton = styled(StyledBtn)`
