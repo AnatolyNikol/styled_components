@@ -18,6 +18,8 @@ function App() {
             <Box>
                 <StyledBtn as={StyledLink} href={'#'}>LinkComponent</StyledBtn>
                 <StyledBtn as={'a'} href={'#'}>Link</StyledBtn>
+                <StyledBtn color={'green'} fontSize={'20px'}>Hello</StyledBtn>
+                <StyledBtn color={'red'}>Hello</StyledBtn>
                 <StyledBtn>Hello</StyledBtn>
                 <SuperButton>SuperButton</SuperButton>
             </Box>
