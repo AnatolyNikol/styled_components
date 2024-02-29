@@ -24,7 +24,7 @@ function App() {
                 {/*<StyledBtn fontSize={'30px'}>Hello</StyledBtn>*/}
                 {/*<SuperButton>SuperButton</SuperButton>*/}
 
-                <StyledBtn color={myTheme.colors.primary}  btnType={'primary'} active>Hello</StyledBtn>
+                <StyledBtn color={myTheme.colors.primary} btnType={'primary'} active>Hello</StyledBtn>
                 <StyledBtn color={myTheme.colors.secondary} btnType={'outlined'}>Hello</StyledBtn>
             </Box>
         </div>
@@ -49,7 +49,7 @@ const Box = styled.div`
         cursor: zoom-in;
     }
 
-    @media screen and (max-width: 800px) {
+    @media ${myTheme.media.tablet} {
         flex-direction: column;
     }
 `;
